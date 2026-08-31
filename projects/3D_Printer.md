@@ -213,7 +213,7 @@ Check out my [Lithophane Project](/projects/LithoGen.html) for a cool example of
 I've also dreamed up a custom CoreXY printer that I could build with most of the same parts from this machine, but it still needs some work before I would consider tearing down my current machine to give it a completely different look. This CoreXY machine employs a different kinematic system where the bed moves up and down while the X and Y axis remain stationary. This reduces the moving mass significantly versus that of a bedslinger, as the X and Y axis both can handle aggressive acceleration as they share the same lightweight toolhead as their moving mass. 
 
 <span class="image fit">
-    <img src="{{ '/images/fulls/Printer_CoreXY.png' | relative_url }}" alt="CoreXY Printer" />
+    <img src="{{ '/images/fulls/Printer_CoreXY1.png' | relative_url }}" alt="CoreXY Printer" />
 </span>
 
 
