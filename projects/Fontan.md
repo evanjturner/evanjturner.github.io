@@ -18,78 +18,18 @@ This patient had undergone MRI and CT imaging sessions, along with a catheter la
         <img src="{{ '/images/fulls/FontanFig.png' | relative_url }}" alt="Project Image" style="width: 100%; border-radius: 4px;" />
     </div>
     <div class="6u$ 12u$(small)">
-        <div id="three-container" style="width: 100%; height: 400px; background: #ffffff; border-radius: 4px;"></div>
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+        <model-viewer
+          src="{{ '/assets/models/Fontan1.glb' | relative_url }}"
+          alt="Project 3D Model"
+          camera-controls
+          shadow-intensity="1"
+          style="width: 100%; height: 100%; min-height: 300px; border-radius: 4px; background-color: #ffffff;">
+        </model-viewer>
     </div>
-    <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-      }
-    }
-    </script>
-    <script type="module">
-        import * as THREE from 'three';
-        import { STLLoader } from 'three/addons/loaders/STLLoader.js';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-        const container = document.getElementById('three-container');
-        const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0xffffff);
-        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 2000);
-        scene.add(camera);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        container.appendChild(renderer.domElement);
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.screenSpacePanning = true;
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
-        scene.add(ambientLight);
-        const cameraLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        cameraLight.position.set(0, 0, 1);
-        camera.add(cameraLight);
-        const loader = new STLLoader();
-        loader.load(
-            "{{ '/assets/models/FontanModel.STL' | relative_url }}",
-            (geometry) => {
-                geometry.computeBoundingBox();
-                geometry.center();
-                geometry.rotateX(-Math.PI / 2);
-                const box = geometry.boundingBox;
-                const maxDim = Math.max(box.max.x - box.min.x, box.max.y - box.min.y, box.max.z - box.min.z);
-                const fov = camera.fov * (Math.PI / 180);
-                let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2)) * 1.2;
-                // Position camera along front Z axis (equator view)
-                camera.position.set(0, 0, cameraZ);
-                camera.near = cameraZ / 100;
-                camera.far = cameraZ * 100;
-                camera.updateProjectionMatrix();
-                controls.target.set(0, 0, 0);
-                controls.update();
-                const material = new THREE.MeshPhongMaterial({ color: 0xA9A9A9, specular: 0x222222, shininess: 30 });
-                const mesh = new THREE.Mesh(geometry, material);
-                scene.add(mesh);
-            },
-            undefined,
-            (error) => {
-                console.error("Error loading STL model:", error);
-            }
-        );
-        function animate() {
-            requestAnimationFrame(animate);
-            controls.update();
-            renderer.render(scene, camera);
-        }
-        animate();
-        window.addEventListener('resize', () => {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
-        });
-    </script>
 </div>
 
-4D Flow MRI is a technique that estimates the transient flow within an anatomy averaged across many cardiac cycles. For this case, results from a 4D flow scan were used as reference for the flow within each of the branches of the anatomy, providing the inlet boundary conditions for fluid dynamics simulations as well as targets to tune the outlet against. Based on the data from the 4D flow, and since the Fontan and Glenn are so far distal in the vasculature, a steady flow approximation was deemed adequate for this work. 
+<p style="margin-top: 2em;"> 4D Flow MRI is a technique that estimates the transient flow within an anatomy averaged across many cardiac cycles. For this case, results from a 4D flow scan were used as reference for the flow within each of the branches of the anatomy, providing the inlet boundary conditions for fluid dynamics simulations as well as targets to tune the outlet against. Based on the data from the 4D flow, and since the Fontan and Glenn are so far distal in the vasculature, a steady flow approximation was deemed adequate for this work.</p> 
 
 <div class="row">
     <div class="6u 12u$(small)">
