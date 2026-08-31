@@ -137,7 +137,7 @@ To do this, I needed to focus first on the extrusion system, as the "upgraded" C
 
 <div class="row">
     <div class="6u 12u$(small)">
-        <img src="{{ '/images/fulls/Printer_07_CAD.png' | relative_url }}" alt="Project Image" style="width: 100%; border-radius: 4px;" />
+        <img src="{{ '/images/fulls/Printer_07_CAD1.png' | relative_url }}" alt="Project Image" style="width: 100%; border-radius: 4px;" />
     </div>
     <div class="6u$ 12u$(small)">
         <img src="{{ '/images/thumbs/Printer_Current.png' | relative_url }}" alt="Project Image" style="width: 100%; border-radius: 4px;" />
