@@ -50,7 +50,7 @@ This patient had undergone MRI and CT imaging sessions, along with a catheter la
         camera.add(cameraLight);
         const loader = new STLLoader();
         loader.load(
-            "{{ '/assets/models/FontanModel.stl' | relative_url }}",
+            "{{ '/assets/models/FontanModel.STL' | relative_url }}",
             (geometry) => {
                 geometry.computeBoundingBox();
                 geometry.center();
