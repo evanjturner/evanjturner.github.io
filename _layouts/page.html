@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    {% include head.html %}
+    <body id="top">
+
+        {% include header.html %}
+
+        <div id="main">
+            <section>
+                <h2>{{ page.title }}</h2>
+                {{ content }}
+                
+                <ul class="actions" style="margin-top: 2em;">
+                    <li><a href="{{ '/' | relative_url }}" class="button">← Back to Portfolio</a></li>
+                </ul>
+            </section>
+        </div>
+
+        {% include footer.html %}
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.poptrox.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

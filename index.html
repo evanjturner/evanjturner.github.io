@@ -1,0 +1,127 @@
+---
+---
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	{% include head.html %}
+	<body id="top">
+
+		{% include header.html %}   
+		
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="Intro">
+						<header class="major">
+							<h2>About me</h2>
+						</header>
+						<p>I'm a Mechanical Engineering M.S. student at the University of Wisconsin - Madison, interested in using mechanical design and computational modeling to build new clinical tools. 
+							I have an extensive background in hardware development, particularly with rapid prototyping, devloping new instrumentation, and building simulation pipelines (with a focus in fluid dynamics). 
+							Beyond academic research, I love to golf, play hockey, lift weights, and tinker with my own personal projects. </p>
+					</section>
+
+				<!-- Projects -->
+					<section id="Projects">
+						<h2>Recent Work</h2>
+						<div class="row">
+							
+							<article class="6u 12u$(xsmall) work-item">
+								<a href="projects/BA_Flow.html" class="image fit"><img src="images/thumbs/BA_Sims.jpg" alt="Brachial Artery Simulations" /></a>
+								<h3>Brachial Artery Flow Simulation (M.S. Thesis)</h3>
+								<p>Assessing postpartum risk using ultrasound-derived CFD</p>
+							</article>
+							
+							<article class="6u$ 12u$(xsmall) work-item">
+								<a href="projects/3D_Printer.html" class="image fit"><img src="images/thumbs/Printer_Current.png" alt="3D Printer" /></a>
+								<h3>Custom Engineered 3D Printer (Personal Project)</h3>
+								<p>Cartesian printer designed from scratch</p>
+							</article>
+							
+							<article class="6u 12u$(xsmall) work-item">
+								<a href="projects/Fontan.html" class="image fit"><img src="images/thumbs/Fontan_Thumb.png" alt="Modeling Virtual Surgery" /></a>
+								<h3>Virtual Surgery Modeling (M.S. Project)</h3>
+								<p>Evaluating hemodynamics of potential surgical treatment options</p>
+							</article>
+							
+							<article class="6u$ 12u$(xsmall) work-item">
+								<a href="projects/Intradiscal_Injection.html" class="image fit"><img src="images/fulls/FlexionFixture.png" alt="Intradiscal Injection" /></a>
+								<h3>Intradiscal Injection (B.S. Thesis)</h3>
+								<p>Biomechanical testing and fixture design</p>
+							</article>
+
+							<article class="6u 12u$(xsmall) work-item">
+								<a href="projects/Urethral_CFD.html" class="image fit"><img src="images/thumbs/UrethralCFD.jpg" alt="Urethral Stricture CFD" /></a>
+								<h3>Urethral Stricture Pressure Simulation (M.S. Project)</h3>
+								<p>Using non-invasive methods to characterize blockage degree</p>
+							</article>
+
+							<article class="6u$ 12u$(xsmall) work-item">
+								<a href="projects/LithoGen.html" class="image fit"><img src="images/thumbs/Lithophane.jpg" alt="Lithophane Generator" /></a>
+								<h3>Lithophane Generator (Personal Project)</h3>
+								<p>Converting images into 3D printable lithophanes</p>
+							</article>
+
+							<article class="6u 12u$(xsmall) work-item">
+								<a href="projects/SwingSim.html" class="image fit"><img src="images/thumbs/SwingSim.jpg" alt="Swing Sim" /></a>
+								<h3>Miscellaneous Computational Modeling</h3>
+								<p>Assorted MATLAB projects</p>
+							</article>
+							
+							<article class="6u$ 12u$(xsmall) work-item">
+								<a href="projects/Misc_Modeling.html" class="image fit"><img src="images/thumbs/MotoAssemFront.JPG" alt="Miscellaneous Modeling" /></a>
+								<h3>Miscellaneous CAD Modeling</h3>
+								<p>Assorted SolidWorks modeling projects</p>
+							</article>
+						</div>
+						
+					</section>
+
+				<!-- Resume Section -->
+					<section id="resume">
+						<h2>Resume</h2>
+						<object data="{{ '/assets/ET_resume.pdf' | relative_url }}" type="application/pdf" width="100%" height="800px">
+							<p>Your browser does not support inline PDFs. <a href="{{ '/assets/ET_resume.pdf' | relative_url }}">Click here to download the PDF.</a></p>
+						</object>
+
+						<!--<ul class="actions" style="margin-top: 1.5em; text-align: center; justify-content: center;">
+							<li><a href="{{ '/assets/ET_resume.pdf' | relative_url }}" class="button" download>Download PDF</a></li>
+						</ul>-->
+					</section>
+							
+				<!-- Contact Section -->		
+					<section id="Contact">
+						<h2>Feel free to reach out if you have any questions or comments on any of my work!</h2>
+						<div class="row">
+							<div class="12u 12u$(small)">
+								<form method="post" action="#">
+									<div class="row uniform 50%">
+										<div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
+										<div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
+										<div class="12u$"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+									</div>
+								</form>
+								<ul class="actions" style="margin-top: 1em;">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+		{% include footer.html %}   
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
